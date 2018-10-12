@@ -61,27 +61,27 @@ ON STAG ID-SERVICE / CLIENT-JS
 
 * Encoded ID checks
 
-[ ] I expect that if a script is loaded with a non-bx apikey, the IDs returned to the callback will be encoded in base64 format
-[ ] I expect that if a script is loaded with a bx apikey, the IDs returned to the callback will _not_ be encoded, and will be in KSUID format
-[ ] I expect that if on a page with multiple scripts w/ different apikeys, we will do 2 calls to the id-service, and the encodedIDs will be different for those two clients
-[ ] I expect from pageview to pageview and domain to domain the encodedIDs will remain the same for a given client
+- [ ] I expect that if a script is loaded with a non-bx apikey, the IDs returned to the callback will be encoded in base64 format
+- [ ] I expect that if a script is loaded with a bx apikey, the IDs returned to the callback will _not_ be encoded, and will be in KSUID format
+- [ ] I expect that if on a page with multiple scripts w/ different apikeys, we will do 2 calls to the id-service, and the encodedIDs will be different for those two clients
+- [ ] I expect from pageview to pageview and domain to domain the encodedIDs will remain the same for a given client
 
 * MasterID checks
 
-[ ] I expect that c.js will send masterIDs to partner-pixel, user-service, and event tracker
-[ ] I expect that c.js will send masterIDs to id-service in the query parameters
-[ ] I expect that c.js will send masterIDs to id-service via the 3rd party cookie
+- [ ] I expect that c.js will send masterIDs to partner-pixel, user-service, and event tracker
+- [ ] I expect that c.js will send masterIDs to id-service in the query parameters
+- [ ] I expect that c.js will send masterIDs to id-service via the 3rd party cookie
 
 
 * Backwards compatability checks
 
 * c.js with prod id-service
-[ ] I expect that c.js will return plaintextIDs to the callback if hitting current production id-service
-[ ] I expect that c.js will store plaintextIDs in localStorage and sessionStorage if hitting production id-service under client specific __idcontext_$APIKEY
+- [ ] I expect that c.js will return plaintextIDs to the callback if hitting current production id-service
+- [ ] I expect that c.js will store plaintextIDs in localStorage and sessionStorage if hitting production id-service under client specific __idcontext_$APIKEY
 
 *old c.js with new id-service
-[ ] I expect that old versions of c.js will return the encodedIDs to the client
-[ ] I expect that old versions of c.js will store the encoded IDs under the __idcontext value in localStorage and sessionStorage, and under __idcontextsc in firstPartyCookies
+- [ ] I expect that old versions of c.js will return the encodedIDs to the client
+- [ ] I expect that old versions of c.js will store the encoded IDs under the __idcontext value in localStorage and sessionStorage, and under __idcontextsc in firstPartyCookies
 
 
 Scope
