@@ -79,7 +79,7 @@ ON STAG ID-SERVICE / CLIENT-JS
 - [ ] I expect that c.js will return plaintextIDs to the callback if hitting current production id-service
 - [ ] I expect that c.js will store plaintextIDs in localStorage and sessionStorage if hitting production id-service under client specific __idcontext_$APIKEY
 
-*old c.js with new id-service
+* old c.js with new id-service
 - [ ] I expect that old versions of c.js will return the encodedIDs to the client
 - [ ] I expect that old versions of c.js will store the encoded IDs under the __idcontext value in localStorage and sessionStorage, and under __idcontextsc in firstPartyCookies
 
