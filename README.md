@@ -13,15 +13,15 @@ serve local html using `python -m SimpleHTTPServer`
 * use hosts file to have a test domain point to localhost
 
 html files:
-    * These files include a "stag" version of c.js and id-service that will return encoded IDs
-        * test-oneclient.html
-        * test-twoclients.html
-        * test-allclients.html
-    * This is the prod version of client-js id-service
-        * test-prodclient.html
-    * These will mix and match production c.js, stag id-service and vice versa
-        * test-oldcjs-stag-id-service
-        * test-newjs-current-id-service
+* These files include a "stag" version of c.js and id-service that will return encoded IDs
+   * test-oneclient.html
+      * test-twoclients.html
+      * test-allclients.html
+   * This is the prod version of client-js id-service
+      * test-prodclient.html
+   * These will mix and match production c.js, stag id-service and vice versa
+      * test-oldcjs-stag-id-service
+      * test-newjs-current-id-service
 
 
 Basic core application functionality in the QA Environment:
