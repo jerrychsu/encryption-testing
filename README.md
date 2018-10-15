@@ -10,8 +10,8 @@ QA Environment:
 --------
 1. git clone this repo.
 1. serve local html using `python -m SimpleHTTPServer` from this directory
-
-* use hosts file to have a test domain point to localhost
+1. browse to test pages located at yourlocaldomain.com:8000/test-files/
+    * use hosts file to have a test domain point to localhost
 
 example:
 ```
