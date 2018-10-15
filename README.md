@@ -164,6 +164,18 @@ function decodeCache(cache) {
 ```
 
 
+Difference between encodedID and plaintext ID:
+
+encodedIDs will start with any character, be 36 characters in length, and include - and _ characters. (not guaranteed to have _ or - tho)
+
+plaintext BXIDs will start with 0 or 1, be 27 characters, and won't have _ or -.
+
+
+
+
+
+
+
 
 For PI to complete:
 * Test plan:
