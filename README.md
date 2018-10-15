@@ -145,7 +145,7 @@ Scope
 Testing Information
 id-service-testing stackdriver link:
 
-https://console.cloud.google.com/logs/viewer?project=augur-web-services&minLogLevel=0&expandAll=false&timestamp=2018-10-15T17:24:49.445000000Z&customFacets=&limitCustomFacetWidth=true&interval=NO_LIMIT&resource=container&scrollTimestamp=2018-10-10T20:56:01.432000000Z&logName=projects%2Faugur-web-services%2Flogs%2Fid-service-testing
+https://console.cloud.google.com/logs/viewer?project=augur-web-services&minLogLevel=0&expandAll=false&limitCustomFacetWidth=true&interval=NO_LIMIT&resource=container&logName=projects%2Faugur-web-services%2Flogs%2Fid-service-testing
 
 
 
