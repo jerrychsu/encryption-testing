@@ -42,7 +42,7 @@ html files:
    * test-prodclient-nonbx.html
 * These will mix and match production c.js, stag id-service and vice versa
    * test-oldcjs-stag-id-service
-   * test-newjs-current-id-service
+   * test-newjs-prod-id-service
 * ID Pixel
   * test-idpixel-bx.html
   * test-idpixel-othercustomer.html
@@ -121,7 +121,7 @@ Backwards compatability checks
 TODO: add pixel, reset expectations
 
 
-reset expecatation
+reset expectations
 ------------
 - [ ] I expect that after traveling to a site with the bx apikey (test-bx-apikey.html) and a non bx test site (test-othercustomer.html) and then going to the resetID page and resetting my ID, i receive IDs after subsequently traveling back to the two other pages. I also expect that in stackdriver, our `returnedIDs` are different for both after resetting.
 
