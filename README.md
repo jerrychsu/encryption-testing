@@ -43,7 +43,10 @@ html files:
 * These will mix and match production c.js, stag id-service and vice versa
    * test-oldcjs-stag-id-service
    * test-newjs-current-id-service
-
+* ID Pixel
+  * test-idpixel-bx.html
+  * test-idpixel-othercustomer.html
+  * test-idpixel-othercustomer2.html
 
 Basic core application functionality in the QA Environment:
 -----------
@@ -116,6 +119,17 @@ Backwards compatability checks
 
 
 TODO: add pixel, reset expectations
+
+
+reset expecatation
+------------
+- [ ] I expect that after traveling to a site with the bx apikey (test-bx-apikey.html) and a non bx test site (test-othercustomer.html) and then going to the resetID page and resetting my ID, i receive IDs after subsequently traveling back to the two other pages. I also expect that in stackdriver, our `returnedIDs` are different for both after resetting.
+
+
+Pixel expectations
+---------
+- [ ] I expect that after hitting all 3 pixel pages, id-service logs them all with the same returnedIDs, for BX the encodedIDs are the same as returnedIDs, and for othercustomer and othercustomer2 the encodedIDs are be different. (logs in stackdriver)
+
 
 Scope
 ------
