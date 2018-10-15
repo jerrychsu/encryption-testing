@@ -14,11 +14,14 @@ serve local html using `python -m SimpleHTTPServer`
 
 html files:
 * These files include a "stag" version of c.js and id-service that will return encoded IDs
-   * test-oneclient.html
+   * test-bx-apikey.html
+   * test-othercustomer.html
+   * test-othercustomer2.html
    * test-twoclients.html
+   * test-bx-and-nonbx.html
    * test-allclients.html
 * This is the prod version of client-js id-service
-   * test-prodclient.html*
+   * test-prodclient-nonbx.html
 * These will mix and match production c.js, stag id-service and vice versa
    * test-oldcjs-stag-id-service
    * test-newjs-current-id-service
@@ -50,6 +53,10 @@ To accomodate these changes, we have also refactored our cache storage library o
 * Adds the IDS_ONLY_CB. (IDOCB)
     * The IDOCB will return to a client supplied script parameter data-idsonlycb the IDs only, based off of the 1st party local storage. This will speed up our TTI for clients that need that.
 
+Further encryption description:
+
+https://bouncex.atlassian.net/wiki/spaces/EN/pages/294223875/Identity+Encryption
+
 
 Acceptance Criteria / Feature Expectations
 ------------------
@@ -64,14 +71,17 @@ ON STAG ID-SERVICE / CLIENT-JS
 - [ ] I expect that if a script is loaded with a non-bx apikey, the IDs returned to the callback will be encoded in base64 format
 - [ ] I expect that if a script is loaded with a bx apikey, the IDs returned to the callback will _not_ be encoded, and will be in KSUID format
 - [ ] I expect that if on a page with multiple scripts w/ different apikeys, we will do 2 calls to the id-service, and the encodedIDs will be different for those two clients
+    * test-twoclients.html
+    * test-allclients.html
 - [ ] I expect from pageview to pageview and domain to domain the encodedIDs will remain the same for a given client
 
 * MasterID checks
 
 - [ ] I expect that c.js will send masterIDs to partner-pixel, user-service, and event tracker
 - [ ] I expect that c.js will send masterIDs to id-service in the query parameters
+    - [ ] I expect that the matches.firstPartyCookie boolean is true in stackdriver in id-service stackdriver logs for that request
 - [ ] I expect that c.js will send masterIDs to id-service via the 3rd party cookie
-
+    - [ ] I expect that the matches.thirdPartyCookie boolean is true in stackdriver in id-service stackdriver logs for that request
 
 * Backwards compatability checks
 
@@ -79,10 +89,15 @@ ON STAG ID-SERVICE / CLIENT-JS
 - [ ] I expect that c.js will return plaintextIDs to the callback if hitting current production id-service
 - [ ] I expect that c.js will store plaintextIDs in localStorage and sessionStorage if hitting production id-service under client specific __idcontext_$APIKEY
 
-* old c.js with new id-service
+* old c.js with stag id-service
 - [ ] I expect that old versions of c.js will return the encodedIDs to the client
-- [ ] I expect that old versions of c.js will store the encoded IDs under the __idcontext value in localStorage and sessionStorage, and under __idcontextsc in firstPartyCookies
+- [ ] I expect that old versions of c.js will store the encoded IDs under the __idcontext value in localStorage, and __idcontextsc sessionStorage, and under __idcontext in firstPartyCookies
+- [ ] I expect that after hitting stag id-service with an old version of c.js, then hitting stag id-service with a new version of c.js, it will retrieve the first party cookie value correctly and send it to the id-service, and expect id-service matches.firstPartySoftID to be true.
 
+- [ ] I expect that after hitting prod id-service with an old version of c.js, then hitting prod id-service with a new version of c.js, it will retrieve the first party cookie value correctly and send it to the id-service, and expect id-service matches.firstPartySoftID to be true.
+
+
+TODO: add pixel, reset expectations
 
 Scope
 ------
@@ -96,7 +111,11 @@ Scope
 
 
 Testing Information
-**Stackdriver Link**
+id-service-testing stackdriver link:
+
+https://console.cloud.google.com/logs/viewer?project=augur-web-services&minLogLevel=0&expandAll=false&timestamp=2018-10-15T17:24:49.445000000Z&customFacets=&limitCustomFacetWidth=true&interval=NO_LIMIT&resource=container&scrollTimestamp=2018-10-10T20:56:01.432000000Z&logName=projects%2Faugur-web-services%2Flogs%2Fid-service-testing
+
+
 
 
 Browsers:
