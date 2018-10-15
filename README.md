@@ -77,7 +77,7 @@ https://bouncex.atlassian.net/wiki/spaces/EN/pages/294223875/Identity+Encryption
 
 
 Acceptance Criteria / Feature Expectations
-------------------
+====================
 The core functionalities this feature needs to perform to meet the requirements of all stakeholders.
 
 
