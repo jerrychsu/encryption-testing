@@ -155,6 +155,15 @@ Browsers:
     Safari
     Firefox
 
+useful functions
+```
+// use this to decrypt what's stored in localStorage / 1st party cookie / session Storage
+function decodeCache(cache) {
+    return atob(decodeURIComponent(cache))
+}
+```
+
+
 
 For PI to complete:
 * Test plan:
