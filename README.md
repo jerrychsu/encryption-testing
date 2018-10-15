@@ -8,9 +8,27 @@ All required details and information are included in this ticket in accordance w
 
 QA Environment:
 --------
-serve local html using `python -m SimpleHTTPServer`
+1. git clone this repo.
+1. serve local html using `python -m SimpleHTTPServer` from this directory
 
 * use hosts file to have a test domain point to localhost
+
+example:
+```
+127.0.0.1 josh.com
+127.0.0.1 josh1.com
+127.0.0.1 josh2.com
+127.0.0.1 josh3.com
+127.0.0.1 josh4.com
+127.0.0.1 josh5.com
+127.0.0.1 josh6.com
+127.0.0.1 josh7.com
+127.0.0.1 josh8.com
+127.0.0.1 josh9.com
+127.0.0.1 josh10.com
+127.0.0.1 josh11.com
+127.0.0.1 josh12.com
+```
 
 html files:
 * These files include a "stag" version of c.js and id-service that will return encoded IDs
@@ -83,8 +101,8 @@ ON STAG ID-SERVICE / CLIENT-JS
 - [ ] I expect that c.js will send masterIDs to id-service via the 3rd party cookie
     - [ ] I expect that the matches.thirdPartyCookie boolean is true in stackdriver in id-service stackdriver logs for that request
 
-* Backwards compatability checks
-
+Backwards compatability checks
+-----------------------
 * c.js with prod id-service
 - [ ] I expect that c.js will return plaintextIDs to the callback if hitting current production id-service
 - [ ] I expect that c.js will store plaintextIDs in localStorage and sessionStorage if hitting production id-service under client specific __idcontext_$APIKEY
