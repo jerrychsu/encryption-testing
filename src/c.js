@@ -922,7 +922,7 @@ let parseScript = __webpack_require__( 7 );
 
 let currentScript = parseScript.getCurrentScript();
 
-const clientOptions = __webpack_require__( 0 ).initialize( currentScript, "1.5.0" ); // eslint-disable-line no-undef
+const clientOptions = __webpack_require__( 0 ).initialize( currentScript, "1.5.0-newcjs-hits-stag-id-service" ); // eslint-disable-line no-undef
 // Main object
 // Require only after initial object setup
 const utils = __webpack_require__( 2 );
