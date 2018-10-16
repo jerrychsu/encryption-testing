@@ -98,7 +98,7 @@ ON STAG ID-SERVICE / CLIENT-JS
 
 * MasterID checks
 
-- [ ] I expect that c.js will send masterIDs to partner-pixel, user-service, and event tracker
+- [ ] I expect that c.js will send masterIDs to partner-pixel (pixel.cdnwidget.com), user-service (u.cdnwidget.com), and event tracker (e.cdnwidget.com)
 - [ ] I expect that c.js will send masterIDs to id-service in the query parameters
     - [ ] I expect that the matches.firstPartyCookie boolean is true in stackdriver in id-service stackdriver logs for that request
 - [ ] I expect that c.js will send masterIDs to id-service via the 3rd party cookie
@@ -113,7 +113,7 @@ Backwards compatability checks
 * old c.js with stag id-service
 - [ ] I expect that old versions of c.js will return the encodedIDs to the client
 - [ ] I expect that old versions of c.js will store the encoded IDs under the __idcontext value in localStorage, and __idcontextsc sessionStorage, and under __idcontext in firstPartyCookies
-- [ ] I expect that after hitting stag id-service with an old version of c.js, then hitting stag id-service with a new version of c.js, it will retrieve the first party cookie value correctly and send it to the id-service, and expect id-service matches.firstPartySoftID to be true.
+- [ ] I expect that after hitting stag id-service with an old version of c.js, then hitting stag id-service with a new version of c.js, it will retrieve the first party cookie value correctly and send it to the id-service, and expect id-service matches.firstPartySoftID to be false.
 
 - [ ] I expect that after hitting prod id-service with an old version of c.js, then hitting prod id-service with a new version of c.js, it will retrieve the first party cookie value correctly and send it to the id-service, and expect id-service matches.firstPartySoftID to be true.
 
